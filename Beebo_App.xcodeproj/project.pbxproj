@@ -11,6 +11,8 @@
 		50C5910B2ED0A31B0021DA05 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5910A2ED0A31B0021DA05 /* ContentView.swift */; };
 		50C5910D2ED0A31D0021DA05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C5910C2ED0A31D0021DA05 /* Assets.xcassets */; };
 		50C591102ED0A31D0021DA05 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C5910F2ED0A31D0021DA05 /* Preview Assets.xcassets */; };
+		50E137852ED496E80021671A /* StartUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E137842ED496E80021671A /* StartUpView.swift */; };
+		50E137872ED4981E0021671A /* LoginView .swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E137862ED4981E0021671A /* LoginView .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		50C5910A2ED0A31B0021DA05 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		50C5910C2ED0A31D0021DA05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50C5910F2ED0A31D0021DA05 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		50E137842ED496E80021671A /* StartUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StartUpView.swift; path = ../StartUpView.swift; sourceTree = "<group>"; };
+		50E137862ED4981E0021671A /* LoginView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				50C591082ED0A31B0021DA05 /* Beebo_AppApp.swift */,
 				50C5910A2ED0A31B0021DA05 /* ContentView.swift */,
+				50E137842ED496E80021671A /* StartUpView.swift */,
+				50E137862ED4981E0021671A /* LoginView .swift */,
 				50C5910C2ED0A31D0021DA05 /* Assets.xcassets */,
 				50C5910E2ED0A31D0021DA05 /* Preview Content */,
 			);
@@ -138,7 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				50C5910B2ED0A31B0021DA05 /* ContentView.swift in Sources */,
+				50E137852ED496E80021671A /* StartUpView.swift in Sources */,
 				50C591092ED0A31B0021DA05 /* Beebo_AppApp.swift in Sources */,
+				50E137872ED4981E0021671A /* LoginView .swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
