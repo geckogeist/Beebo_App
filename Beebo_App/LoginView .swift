@@ -1,81 +1,63 @@
-//
-//  LoginView .swift
-//  Beebo_App
-//
-//  Created by Ethan Nkrumah on 11/24/25.
-//
-
 import SwiftUI
-struct LoginView: View {  // Changed from loginView to LoginView (capitalize struct names)
+
+struct LoginView: View {
     @State private var username = ""
     @State private var password = ""
-    @State private var wrongUsername = 0
-    @State private var wrongPassword = 0
-    @State private var showingLoginScreen = false
-    
+    @State private var goToHome = false      // Controls navigation
+    @State private var wrongPassword = false // Optional error handling
+
     var body: some View {
         NavigationView {
-            ZStack {
-                Color.blue
-                    .ignoresSafeArea()
-                Circle()
-                    .scale(1.7)
-                    .foregroundColor(.white.opacity(0.15))
-                Circle()
-                    .scale(1.35)
-                    .foregroundColor(.white)
-                
-                VStack {
-                    Text("Beebo")
-                    Text("Login")
-                        .font(.largeTitle)
-                        .bold()
-                        .padding()
-                    TextField("Username", text: $username)
-                        .padding()
-                        .frame(width: 300, height: 50)
-                        .background(Color.black.opacity(0.05))
-                        .cornerRadius(10)
-                        .border(.red, width: CGFloat(wrongUsername))
-                    SecureField("Password", text: $password)
-                        .padding()
-                        .frame(width: 300, height: 50)
-                        .background(Color.black.opacity(0.05))
-                        .cornerRadius(10)
-                        .border(.red, width: CGFloat(wrongPassword))
-                    
-                    Button("Login") {
-                        authenticateUser(username: username, password: password)
-                    }
-                    .foregroundColor(.white)
-                    .frame(width: 300, height: 50)
-                    .background(Color.blue)
+            VStack(spacing: 20) {
+
+                // Username field
+                TextField("Username", text: $username)
+                    .padding()
+                    .background(Color(.systemGray6))
                     .cornerRadius(10)
-                    
-                    NavigationLink(destination: Text("You are logged in @\(username)"), isActive: $showingLoginScreen) {
-                        EmptyView()  // Moved inside NavigationLink
-                    }
+                    .padding(.horizontal)
+
+                // Password field
+                SecureField("Password", text: $password)
+                    .padding()
+                    .background(Color(.systemGray6))
+                    .cornerRadius(10)
+                    .padding(.horizontal)
+
+                // LOGIN BUTTON
+                Button(action: {
+                    authenticateUser()
+                }) {
+                    Text("Login")
+                        .foregroundColor(.white)
+                        .frame(width: 300, height: 50)
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                }
+
+                // Hidden navigation triggered by goToHome
+                NavigationLink(
+                    destination: HomeView()
+                        .navigationBarBackButtonHidden(true),
+                    isActive: $goToHome
+                ) {
+                    EmptyView()
                 }
             }
-            .navigationBarHidden(true)
+            .navigationBarHidden(true)  // hide nav bar on login screen
         }
     }
-    
-    func authenticateUser(username: String, password: String) {
-        if username.lowercased() == "admin" {
-            wrongUsername = 0
-            if password.lowercased() == "password" {
-                wrongPassword = 0
-                showingLoginScreen = true
-            } else {
-                wrongPassword = 2
-            }
+
+    func authenticateUser() {
+        // Replace this with your real authentication
+        if username == "Jack" && password == "1234" {
+            goToHome = true        // Navigate to HomeView
         } else {
-            wrongUsername = 2
+            wrongPassword = true   // Trigger your error UI if needed
         }
     }
-}
-#Preview {
-    LoginView()  // Changed from loginView to LoginView
 }
 
+#Preview {
+    LoginView()
+}
