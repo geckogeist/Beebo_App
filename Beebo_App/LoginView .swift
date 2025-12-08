@@ -9,7 +9,13 @@ struct LoginView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
-
+                Image("beebo")
+                    .resizable()
+                    .frame(width: 350, height: 100)
+                Text("Lifestyle & Self Care")
+                    .font(.title)
+                    .bold()
+                
                 // Username field
                 TextField("Username", text: $username)
                     .padding()
@@ -37,7 +43,7 @@ struct LoginView: View {
 
                 // Hidden navigation triggered by goToHome
                 NavigationLink(
-                    destination: HomeView()
+                    destination: newHomeView()
                         .navigationBarBackButtonHidden(true),
                     isActive: $goToHome
                 ) {
