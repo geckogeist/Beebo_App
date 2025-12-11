@@ -49,13 +49,69 @@ struct HomeView: View {
                 }
             }
             
-            HStack {
-                Text("Latest Task")
-                .cornerRadius(10)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color(.green), lineWidth: 1))
-                .padding([.top, .horizontal])
+            ScrollView(.horizontal) {
+                HStack {
+                    
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color.gray)
+                        .frame(width:140, height: 140)
+                        .overlay(
+                            VStack {
+                                Text("Latest Task")
+                                    .font(.headline)
+                                Text(" - Clean your bathroom")
+                                    .font(.subheadline)
+                            }
+                                .foregroundColor(.white)
+                                .padding()
+                        )
+                    
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color.gray)
+                        .frame(width:140, height: 140)
+                        .overlay(
+                            VStack {
+                                Text("Mising Task")
+                                    .font(.headline)
+                                Text("None missing!")
+                                    .font(.subheadline)
+                                Image("isaacUp")
+                            }
+                                .foregroundColor(.white)
+                                .padding()
+                        )
+                    
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color.gray)
+                        .frame(width:140, height: 140)
+                        .overlay(
+                            VStack {
+                                Text("Latest Task")
+                                    .font(.headline)
+                                Text(" - Clean your bathroom")
+                                    .font(.subheadline)
+                            }
+                                .foregroundColor(.white)
+                                .padding()
+                        )
+                    
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color.gray)
+                        .frame(width:140, height: 140)
+                        .overlay(
+                            VStack {
+                                Text("Latest Task")
+                                    .font(.headline)
+                                Text(" - Clean your bathroom")
+                                    .font(.subheadline)
+                            }
+                                .foregroundColor(.white)
+                                .padding()
+                        )
+                    
+                    
+                    
+                }
             }
             Spacer()
         }
