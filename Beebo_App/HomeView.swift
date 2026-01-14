@@ -1,12 +1,13 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var taskCompleted = 0.0
-    @State private var maxTask = 20.0
+    @State private var exp = 0.0
+    @State private var levelCap = 20.0
     @State private var userLevel = 1
+    @State private var ranking = 1
 
     private var progressValue: Double {
-        taskCompleted / maxTask
+        exp / levelCap
     }
 
     var body: some View {
@@ -18,7 +19,7 @@ struct HomeView: View {
                     .padding()
                 
                 HStack {
-                    Text("\(Int(taskCompleted))/\(Int(maxTask))")
+                    Text("\(Int(exp))/\(Int(levelCap))")
                     Spacer()
                 }
                 .padding(20)
@@ -32,22 +33,15 @@ struct HomeView: View {
                 .bold()
 
                 Button("Increment Progress") {
-                    if taskCompleted < maxTask {
-                        taskCompleted += 1.0
+                    if exp < levelCap {
+                        exp += 1.0
                     } else {
-                        taskCompleted = 0.0
+                        exp = 0.0
                     }
                 }
                 .padding()
             }
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    NavigationLink(destination: SettingsView()) {
-                        Image(systemName: "gear")
-                        
-                    }
-                }
-            }
+            
             
             ScrollView(.horizontal) {
                 HStack {
@@ -76,6 +70,8 @@ struct HomeView: View {
                                 Text("None missing!")
                                     .font(.subheadline)
                                 Image("isaacUp")
+                                    .resizable()
+                                    .frame(width: 60)
                             }
                                 .foregroundColor(.white)
                                 .padding()
@@ -86,10 +82,29 @@ struct HomeView: View {
                         .frame(width:140, height: 140)
                         .overlay(
                             VStack {
-                                Text("Latest Task")
+                                Text("Ranking")
                                     .font(.headline)
-                                Text(" - Clean your bathroom")
+                                Text("Bronze")
                                     .font(.subheadline)
+                                if ranking == 1 {
+                                    Image("bronze")
+                                    .resizable()
+                                    .frame(width: 80, height: 80)
+                                    
+                                } else if ranking == 2 {
+                                    Image("silver")
+                                    .resizable()
+                                    .frame(width: 80, height: 80)
+                                } else if ranking == 3 {
+                                    Image("gold")
+                                    .resizable()
+                                    .frame(width: 80, height: 80)
+                                } else if ranking == 4 {
+                                    Image("diamond")
+                                    .resizable()
+                                    .frame(width: 80, height: 80)
+                                }
+                                    
                             }
                                 .foregroundColor(.white)
                                 .padding()
@@ -100,9 +115,9 @@ struct HomeView: View {
                         .frame(width:140, height: 140)
                         .overlay(
                             VStack {
-                                Text("Latest Task")
+                                Text("Task Completed ")
                                     .font(.headline)
-                                Text(" - Clean your bathroom")
+                                Text("Work in progres :(")
                                     .font(.subheadline)
                             }
                                 .foregroundColor(.white)
@@ -117,6 +132,7 @@ struct HomeView: View {
         }
     }
 }
+
 
 #Preview{
     HomeView()

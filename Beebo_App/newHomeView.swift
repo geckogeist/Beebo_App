@@ -1,53 +1,57 @@
-//
-//  newHomeView.swift
-//  Beebo_App
-//
-//  Created by Ethan Nkrumah on 12/3/25.
-//
-
 import SwiftUI
 
-struct taskBar: View {
-    var body: some View {
-        
-        TabView {
-            Text("Home :)")
-                .tabItem {
-                    Image(systemName: "house.fill")
-                    Text("Home")
-                }
-            
-            Text("Task :|")
-                .tabItem {
-                    Image(systemName: "checkmark.circle")
-                    Text("Tasks")
-                }
-            
-            Text("Hub World :0")
-                .tabItem {
-                    Image(systemName: "globe")
-                    Text("Hub World")
-                }
-            
-            Text("Task :|")
-                .tabItem {
-                    Image(systemName: "dollarsign.circle")
-                    Text("Shop")
-                }
 
-            Text("Profile")
-                .tabItem {
-                    Image(systemName: "person.circle")
-                    Text("Profile")
-                }
+struct TaskBar: View {
+    let username: String
+    
+    var body: some View {
+        TabView {
+            NavigationStack {
+                HomeView()
+            }
+            .tabItem {
+                Image(systemName: "house.fill")
+                Text("Home")
+            }
+
+            NavigationStack {
+                TaskView()
+            }
+            .tabItem {
+                Image(systemName: "checkmark.circle")
+                Text("Tasks")
+            }
+            
+            NavigationStack {
+                hubWorldView()
+            }
+            .tabItem {
+                Image(systemName: "globe")
+                Text("Hub World")
+            }
+            
+            NavigationStack {
+                shopView()
+            }
+            .tabItem {
+                Image(systemName: "dollarsign")
+                Text("Shop")
+            }
+            
+            NavigationStack {
+                ProfileView()
+            }
+            .tabItem {
+                Image(systemName: "person.circle")
+                Text("Profile")
+            }
+            
+            
+            
         }
-        
-        
-        
     }
 }
 
-
 #Preview {
-    taskBar()
+    TaskBar(username: "Admin")
 }

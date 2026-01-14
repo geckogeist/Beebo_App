@@ -28,7 +28,10 @@ struct LoginView: View {
             }
             // Modern way to handle programmatic navigation
             .navigationDestination(isPresented: $isAuthenticated) {
-                taskBar()
+                TaskBar(username: username)
+
+                
+                
                     .navigationBarBackButtonHidden(true) // hide back button here
             }
         }
@@ -59,6 +62,9 @@ struct LoginView: View {
     
     private var headerSection: some View {
         VStack(spacing: 8) {
+            Image("beebo")
+                .resizable()
+                .frame(width:200, height: 60)
             Text("Welcome Back")
                 .font(.largeTitle)
                 .fontWeight(.bold)

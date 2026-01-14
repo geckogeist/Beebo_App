@@ -7,26 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5016A2C42F0FF0290079B3CB /* hubWorldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5016A2C32F0FF0290079B3CB /* hubWorldView.swift */; };
+		5016A2C62F0FF2230079B3CB /* shopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5016A2C52F0FF2230079B3CB /* shopView.swift */; };
+		506644802EEB0AC500B9AE2E /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5066447F2EEB0AC500B9AE2E /* TaskView.swift */; };
 		5087BC822EE07BC200719D38 /* newHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5087BC812EE07BC200719D38 /* newHomeView.swift */; };
+		5095A7932EF19BB4000F2505 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5095A7922EF19BB4000F2505 /* ProfileView.swift */; };
 		50C591092ED0A31B0021DA05 /* Beebo_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C591082ED0A31B0021DA05 /* Beebo_AppApp.swift */; };
 		50C5910B2ED0A31B0021DA05 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5910A2ED0A31B0021DA05 /* ContentView.swift */; };
 		50C5910D2ED0A31D0021DA05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C5910C2ED0A31D0021DA05 /* Assets.xcassets */; };
 		50C591102ED0A31D0021DA05 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C5910F2ED0A31D0021DA05 /* Preview Assets.xcassets */; };
 		50E063A82EE1C8FA001E234B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E063A72EE1C8FA001E234B /* HomeView.swift */; };
-		50E063AA2EE71758001E234B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E063A92EE71758001E234B /* SettingsView.swift */; };
 		50E137852ED496E80021671A /* StartUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E137842ED496E80021671A /* StartUpView.swift */; };
 		50E137872ED4981E0021671A /* LoginView .swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E137862ED4981E0021671A /* LoginView .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5016A2C32F0FF0290079B3CB /* hubWorldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hubWorldView.swift; sourceTree = "<group>"; };
+		5016A2C52F0FF2230079B3CB /* shopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shopView.swift; sourceTree = "<group>"; };
+		5066447F2EEB0AC500B9AE2E /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		5087BC812EE07BC200719D38 /* newHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newHomeView.swift; sourceTree = "<group>"; };
+		5095A7922EF19BB4000F2505 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		50C591052ED0A31B0021DA05 /* Beebo_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beebo_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C591082ED0A31B0021DA05 /* Beebo_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beebo_AppApp.swift; sourceTree = "<group>"; };
 		50C5910A2ED0A31B0021DA05 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		50C5910C2ED0A31D0021DA05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50C5910F2ED0A31D0021DA05 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		50E063A72EE1C8FA001E234B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		50E063A92EE71758001E234B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		50E137842ED496E80021671A /* StartUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StartUpView.swift; path = ../StartUpView.swift; sourceTree = "<group>"; };
 		50E137862ED4981E0021671A /* LoginView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,7 +73,10 @@
 				50E137862ED4981E0021671A /* LoginView .swift */,
 				5087BC812EE07BC200719D38 /* newHomeView.swift */,
 				50E063A72EE1C8FA001E234B /* HomeView.swift */,
-				50E063A92EE71758001E234B /* SettingsView.swift */,
+				5066447F2EEB0AC500B9AE2E /* TaskView.swift */,
+				5095A7922EF19BB4000F2505 /* ProfileView.swift */,
+				5016A2C32F0FF0290079B3CB /* hubWorldView.swift */,
+				5016A2C52F0FF2230079B3CB /* shopView.swift */,
 				50C5910C2ED0A31D0021DA05 /* Assets.xcassets */,
 				50C5910E2ED0A31D0021DA05 /* Preview Content */,
 			);
@@ -152,13 +161,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50E063AA2EE71758001E234B /* SettingsView.swift in Sources */,
+				5095A7932EF19BB4000F2505 /* ProfileView.swift in Sources */,
 				5087BC822EE07BC200719D38 /* newHomeView.swift in Sources */,
 				50C5910B2ED0A31B0021DA05 /* ContentView.swift in Sources */,
 				50E137852ED496E80021671A /* StartUpView.swift in Sources */,
+				5016A2C42F0FF0290079B3CB /* hubWorldView.swift in Sources */,
 				50E063A82EE1C8FA001E234B /* HomeView.swift in Sources */,
 				50C591092ED0A31B0021DA05 /* Beebo_AppApp.swift in Sources */,
 				50E137872ED4981E0021671A /* LoginView .swift in Sources */,
+				5016A2C62F0FF2230079B3CB /* shopView.swift in Sources */,
+				506644802EEB0AC500B9AE2E /* TaskView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
