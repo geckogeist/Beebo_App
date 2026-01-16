@@ -15,7 +15,7 @@ struct TaskBar: View {
             }
 
             NavigationStack {
-                TaskView()
+                FitnessHomeView()
             }
             .tabItem {
                 Image(systemName: "checkmark.circle")

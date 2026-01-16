@@ -48,14 +48,6 @@ struct ProfileView: View {
                 
                 // Stats Section
                 HStack(spacing: 40) {
-                    VStack(spacing: 4) {
-                        Text("0")
-                            .font(.title2)
-                            .bold()
-                        Text("Posts")
-                            .font(.caption)
-                            .foregroundColor(.gray)
-                    }
                     
                     VStack(spacing: 4) {
                         Text("0")
@@ -96,7 +88,7 @@ struct ProfileView: View {
                     .padding(.top)
                 
                 // Posts Grid or List would go here
-                Text("Posts will appear here")
+                Text("Avatar will appear here")
                     .foregroundColor(.gray)
                     .padding()
                 

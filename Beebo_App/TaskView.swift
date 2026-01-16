@@ -6,46 +6,15 @@
 //
 
 import SwiftUI
-// MARK: - MAIN CONTENT VIEW (FIXED)
-struct TaskView: View {
-    var body: some View {
-        RootTabView()
-    }
-}
-// MARK: - ROOT TAB VIEW
-struct RootTabView: View {
-    
-    var body: some View {
-        TabView {
-            FitnessHomeView()
-                .tabItem {
-                    Label("Home", systemImage: "figure.walk")
-                }
-            
-            RingsView()
-                .tabItem {
-                    Label("Rings", systemImage: "circle.grid.3x3.fill")
-                }
-            
-            WeeklyTrendsView()
-                .tabItem {
-                    Label("Trends", systemImage: "chart.bar.fill")
-                }
-            
-            SettingsView()
-                .tabItem {
-                    Label("Settings", systemImage: "gearshape.fill")
-                }
-        }
-    }
-}
-    
 // MARK: - FITNESS HOME VIEW
 struct FitnessHomeView: View {
     
     @State private var steps = 7200
     @State private var calories = 360
     @State private var distance = 3.3
+    @State private var stepGoal = 10_000
+    @State private var calorieGoal = 500
+    @State private var distanceGoal = 5.0
     
     let goal = 10_000
     
@@ -64,7 +33,8 @@ struct FitnessHomeView: View {
     }
     
     var body: some View {
-        NavigationView {
+        ScrollView {
+            //Statistics
             VStack(spacing: 25) {
                 
                 ProgressRingView(progress: progress, steps: steps)
@@ -85,7 +55,9 @@ struct FitnessHomeView: View {
                     }
                 }
                 .buttonStyle(.borderedProminent)
-                
+                Text("Weekly Trends")
+                    .font(.largeTitle)
+                    .bold()
                 BarMiniChart(weekly: sampleWeek)
                     .frame(height: 120)
                 
@@ -93,67 +65,44 @@ struct FitnessHomeView: View {
             }
             .padding()
             .navigationTitle("Fitness")
-        }
-    }
-}
-// MARK: - RINGS VIEW
-struct RingsView: View {
-    var body: some View {
-        Text("Rings View")
-            .font(.largeTitle)
-    }
-}
-// MARK: - WEEKLY TRENDS VIEW
-struct WeeklyTrendsView: View {
-    var body: some View {
-        VStack {
-            Text("Weekly Trends")
-                .font(.largeTitle)
-            BarMiniChart(weekly: sampleWeek)
-                .frame(height: 200)
-        }
-        .padding()
-    }
-}
-// MARK: - SETTINGS VIEW (✅ FIXED FORM ERROR)
-struct SettingsView: View {
-    
-    @State private var stepGoal = 10_000
-    @State private var calorieGoal = 500
-    @State private var distanceGoal = 5.0
-    
-    var body: some View {
-        NavigationView {
-            Form {
-                
-                Section(header: Text("Goals")) {
+            
+            //Settings Menu
+            NavigationView {
+                Form {
                     
-                    Stepper("Steps Goal: \(stepGoal)", value: $stepGoal, in: 1000...50_000, step: 500)
+                    Section(header: Text("Goals")) {
+                        
+                        Stepper("Steps Goal: \(stepGoal)", value: $stepGoal, in: 1000...50_000, step: 500)
+                        
+                        Stepper(
+                            "Calories Goal: \(Int(calorieGoal)) kcal",
+                            value: $calorieGoal,
+                            in: 100...2000,
+                            step: 25
+                        )
+                        
+                        Stepper(
+                            "Distance Goal: \(String(format: "%.1f", distanceGoal)) mi",
+                            value: $distanceGoal,
+                            in: 0.5...50,
+                            step: 0.5
+                        )
+                    }
                     
-                    Stepper(
-                        "Calories Goal: \(Int(calorieGoal)) kcal",
-                        value: $calorieGoal,
-                        in: 100...2000,
-                        step: 25
-                    )
-                    
-                    Stepper(
-                        "Distance Goal: \(String(format: "%.1f", distanceGoal)) mi",
-                        value: $distanceGoal,
-                        in: 0.5...50,
-                        step: 0.5
-                    )
+                    Section {
+                        Button("Request Health Authorization") { }
+                        Button("Refresh Data") { }
+                    }
                 }
-                
-                Section {
-                    Button("Request Health Authorization") { }
-                    Button("Refresh Data") { }
-                }
+                .navigationTitle("Task Settings")
             }
-            .navigationTitle("Settings")
+        
+        
         }
     }
 }
+
+
 // MARK: - PROGRESS RING
 struct ProgressRingView: View {
     
@@ -238,7 +187,7 @@ let sampleWeek: [DayStep] = [
 ]
 // MARK: - ✅✅✅ PREVIEW (FIXED & REQUIRED)
 #Preview {
-    TaskView()
+    FitnessHomeView()
 }
 
 

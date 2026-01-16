@@ -12,23 +12,6 @@ struct ContentView: View {
     //    @State private var timeRunning = true
     //    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State private var showLogin = false
-
-        //        VStack {
-        //            StartUpView()
-        //            .onReceive(timer) { _ in
-        //                    // This block runs every second
-        //                    if timeRemaining > 0 && timeRunning {
-        //                        timeRemaining -= 1
-        //                    } else if timeRemaining == 0 && timeRunning {
-        //                        LoginView()
-        //                        timeRunning = false
-        //                    }
-        //
-        //                }
-        //
-        //        }
-        //        .padding()
-        //    }
         
         var body: some View {
                Group {
